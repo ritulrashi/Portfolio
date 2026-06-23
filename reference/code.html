@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RITUL // SYSTEM_PORTFOLIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e5e2e1",
+                      "surface-bright": "#fdf8f8",
+                      "on-tertiary-container": "#00929b",
+                      "tertiary-container": "#002022",
+                      "tertiary-fixed-dim": "#00dbe9",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#747878",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#7df4ff",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-secondary-fixed-variant": "#474744",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-tint": "#5f5e5e",
+                      "secondary-container": "#e1dfdb",
+                      "surface": "#fdf8f8",
+                      "on-primary-container": "#858383",
+                      "background": "#fdf8f8",
+                      "on-tertiary-fixed-variant": "#004f54",
+                      "on-background": "#1c1b1b",
+                      "on-secondary-container": "#63635f",
+                      "surface-container-high": "#ebe7e6",
+                      "surface-container-low": "#f7f3f2",
+                      "secondary-fixed-dim": "#c8c6c2",
+                      "on-tertiary-fixed": "#002022",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#c8c6c5",
+                      "on-surface-variant": "#444748",
+                      "surface-dim": "#ddd9d8",
+                      "on-surface": "#1c1b1b",
+                      "surface-container-highest": "#e5e2e1",
+                      "tertiary": "#000000",
+                      "secondary-fixed": "#e4e2dd",
+                      "outline-variant": "#c4c7c7",
+                      "primary-container": "#1c1b1b",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#313030",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-container": "#f1edec",
+                      "on-primary-fixed": "#1c1b1b",
+                      "secondary": "#5e5e5b",
+                      "primary": "#000000",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-secondary-fixed": "#1b1c19"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "overlap-offset": "-32px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "data-mono": ["JetBrains Mono"],
+                      "headline-lg-mobile": ["Bodoni Moda"],
+                      "display-xl": ["Bodoni Moda"],
+                      "label-micro": ["JetBrains Mono"],
+                      "headline-lg": ["Bodoni Moda"],
+                      "body-md": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "data-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "700"}],
+                      "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                      "label-micro": ["9px", {"lineHeight": "12px", "fontWeight": "700"}],
+                      "headline-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .double-rule {
+            border-bottom: 3px double;
+        }
+        .ticker-scroll {
+            animation: ticker 30s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .scan-line {
+            height: 2px;
+            background: rgba(0, 146, 155, 0.5);
+            width: 100%;
+            position: absolute;
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            5% { opacity: 1; }
+            95% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        body {
+            cursor: crosshair;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-on-tertiary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-background border-b border-outline dark:border-outline-variant flex justify-between items-center px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h1 class="font-data-mono text-data-mono uppercase tracking-tighter font-bold text-primary dark:text-on-background">ARCH.SYS // PORTFOLIO</h1>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-data-mono text-data-mono uppercase text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors duration-200" href="#about">ABOUT</a>
+<a class="font-data-mono text-data-mono uppercase text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors duration-200" href="#experience">EXPERIENCE</a>
+<a class="font-data-mono text-data-mono uppercase text-on-surface-variant hover:text-tertiary-fixed-dim transition-colors duration-200" href="#projects">PROJECTS</a>
+</nav>
+<div class="font-label-micro text-label-micro text-on-primary-container">
+            STATUS: ACTIVE // ENCRYPTED
+        </div>
+</header>
+<!-- Global Ticker Tape -->
+<div class="fixed top-[64px] w-full bg-surface-container-low border-b border-outline overflow-hidden z-40 h-8 flex items-center">
+<div class="ticker-scroll flex whitespace-nowrap gap-margin-desktop items-center">
+<span class="font-data-mono text-data-mono text-on-tertiary-container">LQD.PPR // SYSTEMS ARCHITECT // DISTRIBUTED NETWORKS // C++ // RUST // PYTHON // GOLANG // SCALE: 100k+ REQ/SEC // LATENCY: &lt;5MS // LQD.PPR // SYSTEMS ARCHITECT // DISTRIBUTED NETWORKS // C++ // RUST // PYTHON // GOLANG // SCALE: 100k+ REQ/SEC // LATENCY: &lt;5MS</span>
+<span class="font-data-mono text-data-mono text-on-tertiary-container">LQD.PPR // SYSTEMS ARCHITECT // DISTRIBUTED NETWORKS // C++ // RUST // PYTHON // GOLANG // SCALE: 100k+ REQ/SEC // LATENCY: &lt;5MS // LQD.PPR // SYSTEMS ARCHITECT // DISTRIBUTED NETWORKS // C++ // RUST // PYTHON // GOLANG // SCALE: 100k+ REQ/SEC // LATENCY: &lt;5MS</span>
+</div>
+</div>
+<main class="pt-32 pb-margin-desktop">
+<!-- Hero Section -->
+<section class="px-margin-desktop min-h-[707px] flex flex-col md:flex-row items-end justify-between gap-12 relative mb-32">
+<div class="w-full md:w-2/3">
+<span class="font-label-micro text-label-micro text-on-tertiary-container block mb-4">IDENTITY_PROTOCOL // 001</span>
+<h2 class="font-display-xl text-display-xl uppercase text-primary leading-none -ml-2 mb-8">Ritul</h2>
+<div class="max-w-xl border-l-2 border-primary pl-6">
+<p class="font-data-mono text-data-mono text-on-surface-variant mb-4">
+                        BACKEND_ENGINEER | DISTRIBUTED_SYSTEMS | FINTECH_ARCHITECT
+                    </p>
+<p class="font-body-md text-body-md text-on-surface italic">
+                        Specializing in the development of hyper-efficient data structures and high-throughput communication protocols for the modern financial stack.
+                    </p>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-[3/4] border border-outline relative group">
+<div class="absolute inset-4 border border-outline-variant flex items-center justify-center bg-surface-container overflow-hidden">
+<div class="w-full h-full bg-cover bg-center grayscale opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A striking editorial portrait of a young male professional in a sharp black minimalist suit, captured in high-contrast black and white photography. The lighting is dramatic and cinematic, reminiscent of high-fashion magazine covers. The background is a stark, architectural concrete wall with subtle digital grid overlays. The overall mood is sophisticated, elite, and intellectually rigorous." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKZzflRsRAkNwI2HiRxQEGC-sIvQ3lKIvt4RVBgQ-qsGkJTJPQ4d6Hu716EkFSMM7rrqUyMWhPl_qQeLbPynCjYcGARF313g-sP8yURDs7nGJr36oq_gJyn8oksJkXMfRa9TiJRP1hvOLGdclxL8_P7BWrWqNpWR4AX2qx2mcTcmUv4v8sbchFyfujg3HPKoqbNVV2Vyv3Tw0nvPlRrEPvuIp5-3ajTsteGZGRIaDX0lTPvmSunbCMaeRH0sUlrzLv9sq1aEIe1-Wl')"></div>
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="scan-line"></div>
+<div class="absolute top-4 left-4 font-label-micro text-label-micro text-white bg-primary px-2 py-1">SUBJECT_ID: RITUL_VT</div>
+<div class="absolute bottom-4 right-4 flex gap-1">
+<div class="w-2 h-2 bg-on-tertiary-container"></div>
+<div class="w-2 h-2 bg-on-tertiary-container opacity-50"></div>
+<div class="w-2 h-2 bg-on-tertiary-container opacity-20"></div>
+</div>
+</div>
+<!-- Data Callout -->
+<div class="absolute -bottom-12 -left-12 hidden lg:block bg-surface p-4 border border-outline max-w-[200px]">
+<span class="font-label-micro text-label-micro text-on-secondary">METADATA</span>
+<div class="mt-2 space-y-1">
+<div class="flex justify-between font-data-mono text-[10px]">
+<span>COORD:</span>
+<span>37.2284° N</span>
+</div>
+<div class="flex justify-between font-data-mono text-[10px]">
+<span>LEVEL:</span>
+<span>GRAD_CS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Manifesto // About -->
+<section class="px-margin-desktop mb-32" id="about">
+<div class="double-rule border-primary mb-12 pb-2">
+<h3 class="font-data-mono text-body-md font-bold text-primary uppercase">MANIFESTO // CORE_PHILOSOPHY</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7">
+<p class="font-headline-lg font-bold text-on-surface leading-tight mb-8">
+                        Architecting systems where <span class="italic text-on-tertiary-container">efficiency</span> is the primary aesthetic.
+                    </p>
+<div class="font-body-md text-on-surface-variant space-y-6">
+<p>I'm a Computer Science graduate from <span class="font-bold text-primary">Virginia Tech</span>, currently engineering the next generation of social interaction infrastructure at <span class="font-bold text-primary">Meta</span>. My work exists at the intersection of extreme scalability and elegant architecture.</p>
+<p>I believe that code is a form of industrial design. Whether I'm optimizing a Go service to handle 500k concurrent connections or crafting a high-frequency trading pipeline, I approach every line as a critical component in a larger, precise machine. My philosophy is rooted in the "First Principles" of computer science: simplicity, locality, and performance.</p>
+</div>
+</div>
+<div class="md:col-span-5 border-l border-outline-variant pl-gutter">
+<span class="font-label-micro text-label-micro text-on-primary-container block mb-6 uppercase tracking-widest">TECH_STACK // LOADED_MODULES</span>
+<div class="grid grid-cols-2 gap-4">
+<div class="border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+<span class="font-label-micro text-label-micro text-on-tertiary-container block mb-1">LANGS</span>
+<span class="font-data-mono text-data-mono">C++, RUST, GO, PYTHON</span>
+</div>
+<div class="border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+<span class="font-label-micro text-label-micro text-on-tertiary-container block mb-1">INFRA</span>
+<span class="font-data-mono text-data-mono">K8S, DOCKER, TERRAFORM</span>
+</div>
+<div class="border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+<span class="font-label-micro text-label-micro text-on-tertiary-container block mb-1">DATA</span>
+<span class="font-data-mono text-data-mono">POSTGRES, REDIS, KAFKA</span>
+</div>
+<div class="border border-outline-variant p-4 hover:bg-primary hover:text-white transition-all">
+<span class="font-label-micro text-label-micro text-on-tertiary-container block mb-1">PROTO</span>
+<span class="font-data-mono text-data-mono">GRPC, QUIC, WEBRTC</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience // Professional Log -->
+<section class="px-margin-desktop mb-32" id="experience">
+<div class="double-rule border-primary mb-12 pb-2">
+<h3 class="font-data-mono text-body-md font-bold text-primary uppercase">AUDIT_TRAIL // PROFESSIONAL_LOG</h3>
+</div>
+<div class="space-y-px bg-outline-variant border-y border-outline-variant">
+<!-- Meta -->
+<div class="bg-background grid grid-cols-1 md:grid-cols-12 py-8 group hover:bg-surface-container-low transition-colors">
+<div class="md:col-span-3">
+<span class="font-label-micro text-label-micro bg-primary text-white px-2 py-1">TIMESTAMP: 2024-PRESENT</span>
+</div>
+<div class="md:col-span-5">
+<h4 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary mb-1">META</h4>
+<span class="font-data-mono text-data-mono text-on-tertiary-container block mb-4 uppercase">Software Engineer // Horizon Start</span>
+</div>
+<div class="md:col-span-4">
+<ul class="font-data-mono text-[11px] text-on-surface-variant space-y-2">
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [SYSTEM] Scaled VR social interactions for 1M+ users</li>
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [REDUCE] Latency reduction by 45% via custom UDP protocol</li>
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [DEPLOY] Global rollout across 4 cloud regions</li>
+</ul>
+</div>
+</div>
+<!-- Virginia Tech -->
+<div class="bg-background grid grid-cols-1 md:grid-cols-12 py-8 group hover:bg-surface-container-low transition-colors">
+<div class="md:col-span-3">
+<span class="font-label-micro text-label-micro border border-primary text-primary px-2 py-1">TIMESTAMP: 2020-2024</span>
+</div>
+<div class="md:col-span-5">
+<h4 class="font-headline-lg-mobile md:text-headline-lg font-bold text-primary mb-1">VIRGINIA TECH</h4>
+<span class="font-data-mono text-data-mono text-on-tertiary-container block mb-4 uppercase">B.S. Computer Science // Distributed Systems Focus</span>
+</div>
+<div class="md:col-span-4">
+<ul class="font-data-mono text-[11px] text-on-surface-variant space-y-2">
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [CORE] GPA: 3.9/4.0 // Summa Cum Laude</li>
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [RESEARCH] Consensus algorithms in noisy environments</li>
+<li class="flex gap-2"><span class="text-on-tertiary-container">&gt;&gt;</span> [LAB] Lead Teaching Assistant for Systems Research</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects // System Entries -->
+<section class="px-margin-desktop" id="projects">
+<div class="double-rule border-primary mb-12 pb-2">
+<h3 class="font-data-mono text-body-md font-bold text-primary uppercase">SYSTEM_ENTRIES // REPOSITORY</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="border border-outline p-8 flex flex-col justify-between group hover:border-on-tertiary-container transition-colors">
+<div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-micro text-label-micro text-on-primary-container border border-outline-variant px-2 py-1">AUTH_TOKEN: HTTP_0X44</span>
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="deployed_code">deployed_code</span>
+</div>
+<h5 class="font-headline-lg-mobile font-bold text-primary mb-4 leading-none">HTTP SERVER FROM SCRATCH</h5>
+<p class="font-body-md text-on-surface-variant mb-6">A fully compliant HTTP/1.1 server implementation in C++ focusing on zero-copy parsing and epoll-based concurrency.</p>
+</div>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div class="flex gap-4">
+<span class="font-data-mono text-[10px] text-on-tertiary-container">CPP_CORE</span>
+<span class="font-data-mono text-[10px] text-on-tertiary-container">LINUX_KERNEL</span>
+</div>
+<a class="font-data-mono text-data-mono uppercase underline hover:text-on-tertiary-container transition-colors" href="#">INIT_PULL_REQUEST</a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="border border-outline p-8 flex flex-col justify-between group hover:border-on-tertiary-container transition-colors">
+<div>
+<div class="flex justify-between items-start mb-12">
+<span class="font-label-micro text-label-micro text-on-primary-container border border-outline-variant px-2 py-1">RUNTIME: RUST_ENV_V1</span>
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="database">database</span>
+</div>
+<h5 class="font-headline-lg-mobile font-bold text-primary mb-4 leading-none">DISTRIBUTED EVENT PIPELINE</h5>
+<p class="font-body-md text-on-surface-variant mb-6">High-throughput ingestion engine capable of processing 2M+ events per second with exactly-once delivery guarantees.</p>
+</div>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div class="flex gap-4">
+<span class="font-data-mono text-[10px] text-on-tertiary-container">RUST</span>
+<span class="font-data-mono text-[10px] text-on-tertiary-container">KAFKA_EXT</span>
+</div>
+<a class="font-data-mono text-data-mono uppercase underline hover:text-on-tertiary-container transition-colors" href="#">INIT_PULL_REQUEST</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-background border-t-2 border-double border-outline dark:border-outline-variant w-full py-8 px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-data-mono text-label-micro text-on-tertiary-container uppercase">
+                ©2024 LQD.PPR // ALL_RIGHTS_RESERVED
+            </div>
+<div class="flex gap-8">
+<a class="font-data-mono text-label-micro uppercase text-on-surface-variant hover:text-primary underline transition-opacity opacity-80 hover:opacity-100" href="mailto:contact@ritul.sys">EMAIL</a>
+<a class="font-data-mono text-label-micro uppercase text-on-surface-variant hover:text-primary underline transition-opacity opacity-80 hover:opacity-100" href="#">GITHUB</a>
+<a class="font-data-mono text-label-micro uppercase text-on-surface-variant hover:text-primary underline transition-opacity opacity-80 hover:opacity-100" href="#">LINKEDIN</a>
+<a class="font-data-mono text-label-micro uppercase text-on-surface-variant hover:text-primary underline transition-opacity opacity-80 hover:opacity-100" href="#">RESUME</a>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-on-tertiary-container rounded-full animate-pulse"></span>
+<span class="font-data-mono text-[10px] text-on-surface-variant">CONNECTION: STABLE</span>
+</div>
+</div>
+</footer>
+<!-- Terminal Overlay (Atmospheric) -->
+<div class="fixed pointer-events-none z-[100] w-6 h-6 border border-primary flex items-center justify-center mix-blend-difference" id="terminal-cursor">
+<div class="w-1 h-1 bg-primary"></div>
+</div>
+<script>
+        const cursor = document.getElementById('terminal-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 12 + 'px';
+            cursor.style.top = e.clientY - 12 + 'px';
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Log interaction simulation
+        console.log("%c SYSTEM INITIALIZED ", "background: #000; color: #00dbe9; font-weight: bold; padding: 4px;");
+        console.log("%c PORTFOLIO_V4.0 // RITUL // FETCHING_RESOURCES...", "color: #444; font-family: monospace;");
+    </script>
+</body></html>
