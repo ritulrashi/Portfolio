@@ -1,7 +1,7 @@
-import { tickerItems } from "@/lib/data";
+import { skills } from "@/lib/data";
 
 export default function Ticker() {
-  const line = tickerItems.join(" // ");
+  const line = skills.map((skill) => skill.toUpperCase()).join(" // ");
 
   return (
     <div className="fixed top-[64px] w-full bg-surface-container-low border-b border-outline overflow-hidden z-40 h-8 flex items-center">

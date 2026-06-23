@@ -31,8 +31,8 @@
   --color-on-secondary-container: #63635f;
   --color-tertiary: #000000;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #002022;
-  --color-on-tertiary-container: #00929b;
+  --color-tertiary-container: #1c1b1b;
+  --color-on-tertiary-container: #1c1b1b;
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
@@ -45,10 +45,10 @@
   --color-secondary-fixed-dim: #c8c6c2;
   --color-on-secondary-fixed: #1b1c19;
   --color-on-secondary-fixed-variant: #474744;
-  --color-tertiary-fixed: #7df4ff;
-  --color-tertiary-fixed-dim: #00dbe9;
-  --color-on-tertiary-fixed: #002022;
-  --color-on-tertiary-fixed-variant: #004f54;
+  --color-tertiary-fixed: #e5e2e1;
+  --color-tertiary-fixed-dim: #c8c6c5;
+  --color-on-tertiary-fixed: #1c1b1b;
+  --color-on-tertiary-fixed-variant: #474646;
   --color-background: #fdf8f8;
   --color-on-background: #1c1b1b;
   --color-surface-variant: #e5e2e1;
@@ -96,7 +96,7 @@ body {
 
 .scan-line {
   height: 2px;
-  background: rgba(0, 146, 155, 0.5);
+  background: rgba(28, 27, 27, 0.4);
   width: 100%;
   position: absolute;
   animation: scan 4s linear infinite;

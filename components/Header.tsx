@@ -2,8 +2,10 @@ import { TerminalSquare } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "#about", label: "ABOUT" },
+  { href: "#education", label: "EDUCATION" },
   { href: "#experience", label: "EXPERIENCE" },
   { href: "#projects", label: "PROJECTS" },
+  { href: "#contact", label: "CONTACT" },
 ];
 
 export default function Header() {
@@ -15,7 +17,7 @@ export default function Header() {
           ARCH.SYS // PORTFOLIO
         </h1>
       </div>
-      <nav className="hidden md:flex gap-8">
+      <nav className="hidden md:flex gap-5">
         {NAV_LINKS.map((link) => (
           <a
             key={link.href}

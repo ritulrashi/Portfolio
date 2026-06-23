@@ -19,9 +19,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ritul Rashi // System Portfolio",
+  title: "Ritul Rashi",
   description:
-    "Backend engineer focused on distributed systems, transaction processing, and infrastructure — Virginia Tech CS.",
+    "CS graduate from Virginia Tech with an interest in backend engineering, distributed systems, and fintech.",
 };
 
 export default function RootLayout({
