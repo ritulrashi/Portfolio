@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { profile } from "@/lib/data";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
@@ -21,13 +21,6 @@ export default function Contact() {
             >
               <Mail size={18} />
               Say hi!
-            </a>
-            <a
-              href={`tel:${profile.phone.replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 border border-border text-text px-6 py-3 font-bold hover:border-accent hover:text-accent transition-colors"
-            >
-              <Phone size={18} />
-              {profile.phone}
             </a>
             <a
               href={profile.github}

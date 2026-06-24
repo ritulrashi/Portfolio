@@ -2,9 +2,8 @@ export const profile = {
   name: "Ritul Rashi",
   heroLead: "Hi, Ritul here.",
   heroBody:
-    "CS student at Virginia Tech, graduating August 2026, with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
+    "CS student at Virginia Tech with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
   email: "rashiritul6@gmail.com",
-  phone: "+1 571 599 6131",
   github: "https://github.com/ritulrashi",
   linkedin: "https://linkedin.com/in/ritulrashi/",
   resumeHref: "/ritul-rashi-resume.pdf",
@@ -58,8 +57,8 @@ export const experience: ExperienceEntry[] = [
   {
     id: "vt",
     org: "VIRGINIA TECH",
-    role: "Software Developer",
-    period: "JAN 2025 - PRESENT",
+    role: "Research & Backend Engineer",
+    period: "JAN 2026 - PRESENT",
     current: true,
     bullets: [
       "Designed a PostgreSQL backed sandbox supporting concurrent query execution and real time grading for 170+ users",
