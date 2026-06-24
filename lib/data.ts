@@ -4,6 +4,7 @@ export const profile = {
   heroBody:
     "CS student at Virginia Tech, graduating August 2026, with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
   email: "rashiritul6@gmail.com",
+  phone: "+1 571 599 6131",
   github: "https://github.com/ritulrashi",
   linkedin: "https://linkedin.com/in/ritulrashi/",
   resumeHref: "/ritul-rashi-resume.pdf",

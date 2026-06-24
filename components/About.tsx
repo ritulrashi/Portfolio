@@ -13,16 +13,10 @@ export default function About() {
         </div>
         <div className="max-w-3xl space-y-6 text-lg text-text-muted">
           <p>
-            I&apos;m a Computer Science student at{" "}
-            <span className="font-bold text-text">Virginia Tech</span>, graduating August 2026,
-            with an interest in backend engineering, distributed systems, and fintech. I enjoy
-            building software that is reliable, scalable, and designed with purpose.
-          </p>
-          <p>
-            I&apos;m naturally curious, so I like understanding not just how something works, but
-            why it was built that way. I enjoy looking beneath the abstractions, breaking problems
-            down, and building a strong foundation before moving forward. That curiosity often
-            takes me beyond the original problem and helps me become a better engineer.
+            I&apos;m a Computer Science graduate from{" "}
+            <span className="font-bold text-text">Virginia Tech</span> with an interest in
+            backend engineering, distributed systems, and fintech. I enjoy building reliable
+            software and learning how systems work beneath the surface.
           </p>
           <p className="text-text">Here are some technologies I have been working with:</p>
           <div className="grid grid-cols-2 gap-x-8 gap-y-2 max-w-sm text-base">
@@ -38,10 +32,9 @@ export default function About() {
             ))}
           </div>
           <p>
-            Outside of engineering, I enjoy following financial markets, learning about fintech,
-            and keeping up with emerging technology. I also have an appreciation for fashion and
-            thoughtful design. I believe attention to detail matters, whether I&apos;m writing
-            code, designing an interface, or putting together an idea.
+            In my free time, I enjoy following financial markets, exploring new technology, and
+            keeping up with fashion and design. I appreciate thoughtful details, whether it&apos;s
+            in software, user experiences, or everyday life.
           </p>
         </div>
       </div>
