@@ -2,7 +2,7 @@ export const profile = {
   name: "Ritul Rashi",
   heroLead: "Hi, Ritul here.",
   heroBody:
-    "CS graduate from Virginia Tech with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
+    "CS student at Virginia Tech, graduating August 2026, with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
   email: "rashiritul6@gmail.com",
   github: "https://github.com/ritulrashi",
   linkedin: "https://linkedin.com/in/ritulrashi/",
@@ -25,7 +25,7 @@ export const skills = [
 export const education = {
   org: "VIRGINIA TECH",
   degree: "B.S. Computer Science",
-  period: "GRADUATED MAY 2026",
+  period: "EXPECTED AUGUST 2026",
   coursework: [
     "Software Design and Data Structures",
     "Computer Organization",
@@ -93,7 +93,7 @@ export const experience: ExperienceEntry[] = [
 export type Project = {
   id: string;
   title: string;
-  description: string;
+  points: string[];
   stack: string[];
   href: string;
   collabNote?: string;
@@ -102,35 +102,47 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "personal-server",
-    title: "HTTP Server from Scratch",
-    description:
-      "I wanted to understand what frameworks like Spring Boot are actually doing underneath, so I built an HTTP/1.1 server from scratch in C instead of relying on one. It gave me a deeper understanding of TCP connections, multithreading, HTTP request parsing, and how web servers work behind the scenes. Built for Virginia Tech CS3214.",
-    stack: ["C", "pthreads", "JWT", "Linux"],
+    title: "Personal-Server",
+    points: [
+      "A production-grade HTTP/1.1 web server built from scratch in C.",
+      "Supports multi-threading, JWT authentication, video streaming, and IPv6.",
+      "Built for CS3214 at Virginia Tech with a security-hardened request pipeline.",
+    ],
+    stack: ["C", "pthreads", "JWT", "IPv6"],
     href: "https://github.com/ritulrashi/Personal-Server",
   },
   {
     id: "midas-core",
-    title: "Distributed Event Pipeline",
-    description:
-      "Built a Kafka based event pipeline using Spring Boot microservices, PostgreSQL, and Docker. I focused on designing services that communicate reliably and remain scalable as the system grows. Building this taught me how distributed systems handle communication and why fault tolerance and decoupling matter from the beginning instead of being added later.",
-    stack: ["Spring Boot", "Kafka", "PostgreSQL", "Docker"],
+    title: "Midas-Core",
+    points: [
+      "A production-grade distributed transaction processing system.",
+      "Built with Java 17, Spring Boot 3, Apache Kafka, and PostgreSQL.",
+      "Implements a double-entry ledger with automated reconciliation.",
+    ],
+    stack: ["Java", "Spring Boot", "Kafka", "PostgreSQL"],
     href: "https://github.com/ritulrashi/Midas-Core",
   },
   {
     id: "insightops",
     title: "InsightOps",
-    description:
-      "Co-built a Kubernetes based observability stack with Prometheus, Loki, and Helm. I wrote a Go anomaly detection service integrated with FastAPI to classify failures and trigger alerts in real time, which taught me how to reason about a system's health from the outside instead of just its application logs.",
-    stack: ["Go", "Kubernetes", "FastAPI"],
+    points: [
+      "A Kubernetes copilot that explains cluster failures in plain English.",
+      "Reads cluster logs and metrics to spot patterns like OOM crashes or missing GPUs.",
+      "Sends a chat or CLI alert once it identifies the issue.",
+    ],
+    stack: ["Python", "Kubernetes", "Helm"],
     href: "https://github.com/ishitagupta5/InsightOps",
     collabNote: "Co-built with @ishitagupta5",
   },
   {
     id: "upicrypto",
     title: "UPICrypto",
-    description:
-      "Developed 6 Solidity smart contracts on Ethereum and Polygon for decentralized payment processing, using EIP-712 typed signature workflows and gas optimized contract logic. I wrote 84 automated Hardhat tests to push on the edge cases, since a financial contract only earns trust once it has been tested as hard as it has been written.",
-    stack: ["Solidity", "Hardhat", "Blockchain"],
+    points: [
+      "Decentralized cross-border payment infrastructure on Ethereum and Polygon.",
+      "Includes an ERC-20 stablecoin, ZK proof privacy, and an L1/L2 bridge.",
+      "Ships with a Go backend API, a React dashboard, and a React Native app.",
+    ],
+    stack: ["Go", "TypeScript", "React", "Solidity"],
     href: "https://github.com/ritulrashi/UPICrypto",
   },
 ];

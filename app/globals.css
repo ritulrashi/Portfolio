@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-lexend);
+  --font-sans: var(--font-carlito);
 
   --color-background: #0a192f;
   --color-surface: #112240;

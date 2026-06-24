@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Carlito } from "next/font/google";
 import "./globals.css";
 
-const lexend = Lexend({
+const carlito = Carlito({
   subsets: ["latin"],
-  variable: "--font-lexend",
+  weight: ["400", "700"],
+  variable: "--font-carlito",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lexend.variable} scroll-smooth`}>
+    <html lang="en" className={`${carlito.variable} scroll-smooth`}>
       <body className="bg-background text-text selection:bg-accent selection:text-background">
         {children}
       </body>
