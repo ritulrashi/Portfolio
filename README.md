@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ritul Rashi — Portfolio
 
-## Getting Started
+My personal portfolio site, built with Next.js and Tailwind CSS.
 
-First, run the development server:
+**Live:** [ritul-portfolio-phi.vercel.app](https://ritul-portfolio-phi.vercel.app)
+
+## Sections
+
+- **Home** — intro and contact CTA
+- **About** — bio and technologies I work with
+- **Education** — Virginia Tech, coursework, certifications
+- **Experience** — Virginia Tech, PSN Musicals, DuoFits
+- **Projects** — Personal-Server, Midas-Core, InsightOps, UPICrypto
+- **Contact** — email, GitHub, LinkedIn, resume
+
+## Stack
+
+- [Next.js](https://nextjs.org) (App Router)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [Carlito](https://fonts.google.com/specimen/Carlito) via `next/font/google`
+- Deployed on [Vercel](https://vercel.com)
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view it. Project content lives in `lib/data.ts`.
