@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Bodoni_Moda, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
-import CustomCursor from "@/components/CustomCursor";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 
-const bodoniModa = Bodoni_Moda({
+const lexend = Lexend({
   subsets: ["latin"],
-  variable: "--font-bodoni",
-});
-
-const hankenGrotesk = Hanken_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-hanken",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
+  variable: "--font-lexend",
 });
 
 export const metadata: Metadata = {
@@ -30,13 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${bodoniModa.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable} scroll-smooth`}
-    >
-      <body className="bg-background text-on-background selection:bg-on-tertiary-container selection:text-white cursor-crosshair">
+    <html lang="en" className={`${lexend.variable} scroll-smooth`}>
+      <body className="bg-background text-text selection:bg-accent selection:text-background">
         {children}
-        <CustomCursor />
       </body>
     </html>
   );

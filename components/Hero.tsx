@@ -1,27 +1,34 @@
+import { Mail } from "lucide-react";
 import { profile } from "@/lib/data";
-import Portrait from "@/components/Portrait";
+import ParticleScatter from "@/components/ParticleScatter";
 
 export default function Hero() {
+  const [lead, name] = profile.heroLead.split("Ritul");
+
   return (
-    <section className="px-margin-mobile md:px-margin-desktop min-h-[calc(100vh-128px)] flex flex-col md:flex-row items-center justify-between gap-12 relative mb-32">
-      <div className="w-full md:w-2/3">
-        <span className="font-mono text-label-micro text-on-tertiary-container block mb-4">
-          IDENTITY_PROTOCOL // 001
-        </span>
-        <h2 className="font-display text-[clamp(2.75rem,9vw,7.5rem)] font-black uppercase text-primary leading-none -tracking-[0.03em] -ml-1 mb-4">
-          {profile.displayName}
-        </h2>
-        <span className="font-mono text-data-mono text-on-tertiary-container block mb-8">
-          {profile.subtitle}
-        </span>
-        <div className="max-w-xl border-l-2 border-primary pl-6">
-          <p className="font-sans text-body-md text-on-surface font-bold mb-2">
-            {profile.heroLead}
-          </p>
-          <p className="font-sans text-body-md text-on-surface-variant">{profile.heroBody}</p>
-        </div>
+    <section
+      id="home"
+      className="px-6 md:px-16 min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-12 pt-32"
+    >
+      <div className="w-full md:w-1/2">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          {lead}
+          <span className="text-accent">Ritul</span>
+          {name}
+          <span className="cursor-blink text-accent">|</span>
+        </h1>
+        <p className="mt-6 max-w-md text-lg text-text-muted">{profile.heroBody}</p>
+        <a
+          href={`mailto:${profile.email}`}
+          className="mt-8 inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 font-bold hover:bg-accent/10 transition-colors"
+        >
+          <Mail size={18} />
+          Say hi!
+        </a>
       </div>
-      <Portrait />
+      <div className="w-full md:w-1/2 flex justify-center">
+        <ParticleScatter />
+      </div>
     </section>
   );
 }

@@ -1,35 +1,51 @@
+import { Mail } from "lucide-react";
 import { profile } from "@/lib/data";
-
-const LINKS = [
-  { label: "EMAIL", href: `mailto:${profile.email}` },
-  { label: "GITHUB", href: profile.github },
-  { label: "LINKEDIN", href: profile.linkedin },
-  { label: "RESUME", href: profile.resumeHref },
-];
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export default function Contact() {
   return (
-    <section className="px-margin-mobile md:px-margin-desktop mb-32" id="contact">
-      <div className="double-rule border-primary mb-12 pb-2">
-        <h3 className="font-mono text-body-md font-bold text-primary uppercase">
-          CONTACT // OPEN_CHANNEL
-        </h3>
+    <section className="px-6 md:px-16 py-24" id="contact">
+      <div className="flex items-center gap-4 mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold whitespace-nowrap">/ contact</h2>
+        <div className="h-px bg-border flex-1" />
       </div>
-      <p className="font-display text-headline-lg-mobile md:text-headline-lg font-bold text-on-surface leading-tight mb-10 max-w-2xl">
-        Want to build something or just talk shop. Reach out.
-      </p>
-      <div className="flex flex-wrap gap-4">
-        {LINKS.map((link) => (
+      <div className="max-w-2xl">
+        <p className="text-lg text-text-muted mb-8">
+          Want to build something or just talk shop, reach out. My inbox is always open.
+        </p>
+        <div className="flex flex-wrap items-center gap-4">
           <a
-            key={link.label}
-            href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="font-mono text-data-mono uppercase border border-outline px-6 py-3 hover:bg-primary hover:text-white transition-all"
+            href={`mailto:${profile.email}`}
+            className="inline-flex items-center gap-2 border border-accent text-accent px-6 py-3 font-bold hover:bg-accent/10 transition-colors"
           >
-            {link.label}
+            <Mail size={18} />
+            Say hi!
           </a>
-        ))}
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-border text-text px-6 py-3 font-bold hover:border-accent hover:text-accent transition-colors"
+          >
+            <GithubIcon size={18} />
+            GitHub
+          </a>
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-border text-text px-6 py-3 font-bold hover:border-accent hover:text-accent transition-colors"
+          >
+            <LinkedinIcon size={18} />
+            LinkedIn
+          </a>
+          <a
+            href={profile.resumeHref}
+            className="inline-flex items-center gap-2 border border-border text-text px-6 py-3 font-bold hover:border-accent hover:text-accent transition-colors"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </section>
   );

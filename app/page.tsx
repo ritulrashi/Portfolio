@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import Ticker from "@/components/Ticker";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Education from "@/components/Education";
@@ -12,8 +11,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <Ticker />
-      <main className="pt-32 pb-margin-desktop">
+      <main>
         <Hero />
         <About />
         <Education />

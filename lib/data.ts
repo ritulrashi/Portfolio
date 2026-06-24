@@ -1,7 +1,5 @@
 export const profile = {
   name: "Ritul Rashi",
-  displayName: "RITUL RASHI",
-  subtitle: "VIRGINIA TECH '26",
   heroLead: "Hi, Ritul here.",
   heroBody:
     "CS graduate from Virginia Tech with an interest in backend engineering, distributed systems, and fintech. I enjoy building reliable software and understanding how systems work from the ground up.",
@@ -9,8 +7,6 @@ export const profile = {
   github: "https://github.com/ritulrashi",
   linkedin: "https://linkedin.com/in/ritulrashi/",
   resumeHref: "/ritul-rashi-resume.pdf",
-  coordinates: "37.2284° N",
-  level: "CS '26",
 };
 
 export const skills = [
@@ -96,55 +92,45 @@ export const experience: ExperienceEntry[] = [
 
 export type Project = {
   id: string;
-  tag: string;
   title: string;
   description: string;
   stack: string[];
   href: string;
-  linkLabel: string;
   collabNote?: string;
 };
 
 export const projects: Project[] = [
   {
     id: "personal-server",
-    tag: "AUTH_TOKEN: HTTP_0X44",
-    title: "HTTP SERVER FROM SCRATCH",
+    title: "HTTP Server from Scratch",
     description:
       "I wanted to understand what frameworks like Spring Boot are actually doing underneath, so I built an HTTP/1.1 server from scratch in C instead of relying on one. It gave me a deeper understanding of TCP connections, multithreading, HTTP request parsing, and how web servers work behind the scenes. Built for Virginia Tech CS3214.",
-    stack: ["C", "PTHREADS", "JWT", "LINUX"],
+    stack: ["C", "pthreads", "JWT", "Linux"],
     href: "https://github.com/ritulrashi/Personal-Server",
-    linkLabel: "VIEW_REPOSITORY",
   },
   {
     id: "midas-core",
-    tag: "LEDGER: FIN_0X07",
-    title: "DISTRIBUTED EVENT PIPELINE",
+    title: "Distributed Event Pipeline",
     description:
       "Built a Kafka based event pipeline using Spring Boot microservices, PostgreSQL, and Docker. I focused on designing services that communicate reliably and remain scalable as the system grows. Building this taught me how distributed systems handle communication and why fault tolerance and decoupling matter from the beginning instead of being added later.",
-    stack: ["SPRING_BOOT", "KAFKA", "POSTGRES", "DOCKER"],
+    stack: ["Spring Boot", "Kafka", "PostgreSQL", "Docker"],
     href: "https://github.com/ritulrashi/Midas-Core",
-    linkLabel: "VIEW_REPOSITORY",
   },
   {
     id: "insightops",
-    tag: "RUNTIME: GO_ENV_V1",
-    title: "INSIGHTOPS",
+    title: "InsightOps",
     description:
       "Co-built a Kubernetes based observability stack with Prometheus, Loki, and Helm. I wrote a Go anomaly detection service integrated with FastAPI to classify failures and trigger alerts in real time, which taught me how to reason about a system's health from the outside instead of just its application logs.",
-    stack: ["GO", "KUBERNETES", "FASTAPI"],
+    stack: ["Go", "Kubernetes", "FastAPI"],
     href: "https://github.com/ishitagupta5/InsightOps",
-    linkLabel: "VIEW_REPOSITORY",
-    collabNote: "COLLAB // co-built with @ishitagupta5",
+    collabNote: "Co-built with @ishitagupta5",
   },
   {
     id: "upicrypto",
-    tag: "CHAIN: EVM_POLYGON",
-    title: "UPICRYPTO",
+    title: "UPICrypto",
     description:
       "Developed 6 Solidity smart contracts on Ethereum and Polygon for decentralized payment processing, using EIP-712 typed signature workflows and gas optimized contract logic. I wrote 84 automated Hardhat tests to push on the edge cases, since a financial contract only earns trust once it has been tested as hard as it has been written.",
-    stack: ["SOLIDITY", "HARDHAT", "BLOCKCHAIN"],
+    stack: ["Solidity", "Hardhat", "Blockchain"],
     href: "https://github.com/ritulrashi/UPICrypto",
-    linkLabel: "VIEW_REPOSITORY",
   },
 ];

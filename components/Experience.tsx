@@ -1,49 +1,48 @@
+"use client";
+
+import { useState } from "react";
 import { experience } from "@/lib/data";
 
 export default function Experience() {
+  const [active, setActive] = useState(0);
+  const entry = experience[active];
+
   return (
-    <section className="px-margin-mobile md:px-margin-desktop mb-32" id="experience">
-      <div className="double-rule border-primary mb-12 pb-2">
-        <h3 className="font-mono text-body-md font-bold text-primary uppercase">
-          AUDIT_TRAIL // PROFESSIONAL_LOG
-        </h3>
+    <section className="px-6 md:px-16 py-24" id="experience">
+      <div className="flex items-center gap-4 mb-10">
+        <h2 className="text-3xl md:text-4xl font-bold whitespace-nowrap">/ experience</h2>
+        <div className="h-px bg-border flex-1" />
       </div>
-      <div className="space-y-px bg-outline-variant border-y border-outline-variant">
-        {experience.map((entry) => (
-          <div
-            key={entry.id}
-            className="bg-background grid grid-cols-1 md:grid-cols-12 py-8 group hover:bg-surface-container-low transition-colors"
-          >
-            <div className="md:col-span-3">
-              <span
-                className={
-                  entry.current
-                    ? "font-mono text-label-micro bg-primary text-white px-2 py-1"
-                    : "font-mono text-label-micro border border-primary text-primary px-2 py-1"
-                }
-              >
-                TIMESTAMP: {entry.period}
-              </span>
-            </div>
-            <div className="md:col-span-5">
-              <h4 className="font-display text-headline-lg-mobile md:text-headline-lg font-bold text-primary mb-1">
-                {entry.org}
-              </h4>
-              <span className="font-mono text-data-mono text-on-tertiary-container block mb-4 uppercase">
-                {entry.role}
-              </span>
-            </div>
-            <div className="md:col-span-4">
-              <ul className="font-mono text-[11px] text-on-surface-variant space-y-2">
-                {entry.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-2">
-                    <span className="text-on-tertiary-container">&gt;&gt;</span> {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+      <div className="flex flex-col md:flex-row gap-2 md:gap-10 max-w-3xl">
+        <div className="flex md:flex-col overflow-x-auto md:overflow-visible border-b md:border-b-0 md:border-l border-border">
+          {experience.map((item, i) => (
+            <button
+              key={item.id}
+              onClick={() => setActive(i)}
+              className={`px-4 py-3 text-left text-sm font-bold whitespace-nowrap transition-colors border-b-2 md:border-b-0 md:border-l-2 -mb-px md:-mb-0 md:-ml-px ${
+                active === i
+                  ? "text-accent border-accent"
+                  : "text-text-muted border-transparent hover:text-text"
+              }`}
+            >
+              {item.org}
+            </button>
+          ))}
+        </div>
+        <div className="flex-1">
+          <h3 className="text-xl md:text-2xl font-bold">
+            {entry.role} @ <span className="text-accent">{entry.org}</span>
+          </h3>
+          <p className="text-sm text-text-muted mt-1 mb-6">{entry.period}</p>
+          <ul className="space-y-3 text-text-muted">
+            {entry.bullets.map((bullet) => (
+              <li key={bullet} className="flex gap-3">
+                <span className="text-accent mt-1">▸</span>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
